@@ -1,0 +1,22 @@
+body {
+
+  height: 100vh;
+  background: url("/static/images/ChatGPT Image Aug 29, 2025, 01_30_04 AM.png") top center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  position: relative;
+
+}
+
+.scroll-gif {
+  width: 100%;
+  text-align: center;
+  margin-top: 100vh; /* show only after scrolling */
+}
+.scroll-gif img {
+  max-width: 80%;
+}
+

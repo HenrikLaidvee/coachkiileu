@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block title %}Kalkulaator{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="/static/styles/calculatorstyles.css">
+
+<div class="calc-box">
+  <h2>BMI Kalkulaator</h2>
+  <form action="/Kalkulaator/bmi" method="post">
+  <label for="height">Pikkus (cm):</label>
+  <input type="number" name="height" id="height" value="{{ height_val|default('') }}" required>
+
+  <label for="weight">Kaal (kg):</label>
+  <input type="number" name="weight" id="weight" value="{{ weight_val|default('') }}" required>
+
+  <button type="submit">Arvuta BMI</button>
+</form>
+
+
+  {% if bmi %}
+    <p><strong>Sinu BMI:</strong> {{ bmi }} ({{ bmi_status }})</p>
+  {% endif %}
+</div>
+
+<div class="calc-box">
+  <h2>BMR Kalkulaator</h2>
+  <form action="/Kalkulaator/bmr" method="post">
+  <label for="age">Vanus:</label>
+  <input type="number" name="age" id="age" value="{{ age_val|default('') }}" required>
+
+  <label for="gender">Sugu:</label>
+  <select name="gender" id="gender" required>
+    <option value="male" {% if gender_val=='male' %}selected{% endif %}>Mees</option>
+    <option value="female" {% if gender_val=='female' %}selected{% endif %}>Naine</option>
+  </select>
+
+  <label for="height2">Pikkus (cm):</label>
+  <input type="number" name="height" id="height2" value="{{ height2_val|default('') }}" required>
+
+  <label for="weight2">Kaal (kg):</label>
+  <input type="number" name="weight" id="weight2" value="{{ weight2_val|default('') }}" required>
+
+  <button type="submit">Arvuta BMR</button>
+</form>
+
+
+  {% if bmr %}
+    <p><strong>Sinu BMR:</strong> {{ bmr }} kcal/päevas</p>
+  {% endif %}
+</div>
+
+{% endblock %}
+

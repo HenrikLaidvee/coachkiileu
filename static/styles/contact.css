@@ -1,0 +1,93 @@
+.contact-container {
+  position: relative;
+  width: 100vw;   /* full width */
+  height: 100vh;  /* full height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;   /* cover full width */
+  height: 100vh;  /* cover full height */
+  object-fit: cover; /* makes video fill screen */
+  z-index: -1;
+}
+
+.contact-box {
+  position: relative;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 2rem;
+  border-radius: 12px;
+  color: #fff;
+  max-width: 600px;
+  width: 90%;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+  text-align: center;
+}
+
+.contact-box h2 {
+  margin-bottom: 1.5rem;
+  color: white;
+  text-align: center;
+}
+
+.contact-box label {
+  display: block;
+  margin-top: 1rem;
+  font-weight: 600;
+}
+
+.contact-box input,
+.contact-box textarea {
+  width: 100%;
+  margin-top: 0.5rem;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 6px;
+  background: #111;
+  color: #eee;
+  font-size: 1rem;
+}
+
+.contact-box input:focus,
+.contact-box textarea:focus {
+  outline: 2px solid white;
+}
+
+.contact-box button {
+  margin-top: 1.5rem;
+  width: 100%;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 6px;
+  background: black;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.contact-box button:hover {
+  background: dimgray;
+}
+
+.scroll-video {
+  width: 100%;
+  text-align: center;
+  margin-top: 100vh; /* show only after scrolling */
+}
+
+.scroll-video video {
+  max-width: 80%;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+}
+
+
+

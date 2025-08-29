@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}My Site{% endblock %}</title>
+    <link rel="stylesheet" href="/static/styles/styles.css">
+</head>
+<body>
+
+<header class="header">
+  <div class="header-slot">
+    <a href="/" class="home-link">Avaleht</a>
+  </div>
+  <div class="header-slot">
+    <a href="/Kalkulaator" class="nav-link">Kalkulaator</a>
+  </div>
+  <div class="header-slot">
+    <a href="/Minust" class="nav-link">Minust</a>
+  </div>
+  <div class="header-slot">
+    <a href="/Kontakt" class="nav-link">Kontakt</a>
+  </div>
+</header>
+
+<script>
+  (function () {
+    const header = document.querySelector('.header');
+    const shrinkAt = 10;
+    function onScroll() {
+      const scrolled = window.scrollY > shrinkAt;
+      header.classList.toggle('is-scrolled', scrolled);
+      document.body.style.paddingTop = scrolled
+        ? getComputedStyle(header).getPropertyValue('--header-small')
+        : getComputedStyle(header).getPropertyValue('--header-big');
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('load', onScroll);
+  })();
+</script>
+
+<main>
+  {% block content %}{% endblock %}
+</main>
+
+</body>
+</html>

@@ -1,0 +1,62 @@
+:root {
+  --header-big: 72px;     /* initial size */
+  --header-small: 48px;   /* scrolled size */
+  --header-padding-x: clamp(12px, 4vw, 24px);
+}
+
+/* Prevent content jump when the header changes size */
+body {
+  padding-top: var(--header-big);
+
+  transition: padding-top .25s ease;
+}
+
+/* Header layout: 4 equal columns */
+.header {
+  position: fixed;
+  inset: 0 0 auto 0;
+  height: var(--header-big);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 equal slots */
+  align-items: center;
+  text-align: center;
+  padding: 0 var(--header-padding-x);
+  text: gray;
+  background: rgba(0,0,0,0.85); /* dark transparent */
+  color: #fff;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  box-shadow: 0 2px 10px rgba(0,0,0,.06);
+  transition: height .25s ease, box-shadow .25s ease, background .25s ease;
+  z-index: 1000;
+}
+
+.header-slot a {
+  display: inline-block;
+  width: 100%;
+  font-size: clamp(1.25rem, 2vw + 0.5rem, 2rem); /* large at start */
+  font-weight: 600;
+  transition: font-size .25s ease, transform .25s ease, opacity .25s ease;
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Shrink state */
+.header.is-scrolled {
+  height: var(--header-small);
+  background: black;
+  box-shadow: 0 6px 16px rgba(0,0,0,.08);
+}
+
+.header.is-scrolled .header-slot a {
+  font-size: clamp(1rem, 1.5vw + 0.4rem, 1.25rem); /* smaller */
+  transform: translateY(-1px) scale(0.95);
+  opacity: 0.95;
+}
+
+
+
+
+
+
+

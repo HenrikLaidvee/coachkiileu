@@ -1,0 +1,283 @@
+.hero {
+  height: 90vh;
+  background: url("/static/images/TXnaON_Y.jpeg") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  position: relative;
+}
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: none;
+}
+.hero-text {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  padding: 1rem;
+}
+.cta-button {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 1rem 2rem;
+  background: #00aaff;
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+.cta-button:hover { background: #0088cc; }
+
+body {
+  margin: 0;
+  background: #000;   /* full black background */
+  color: black;
+}
+
+
+.section-divider {
+  width: 100%;
+  height: 100px; /* adjust height */
+  background: #000;
+  clip-path: polygon(0 0, 100% 20%, 100% 100%, 0 80%);
+}
+
+section {
+  position: relative;
+  width: 100%;
+  z-index: 1;
+}
+
+
+
+section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 120px;
+  background: linear-gradient(to top, rgba(0,0,0,0) 0%, #000 100%);
+  z-index: 5;
+  pointer-events: none;
+}
+
+.about {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  min-height: 80vh;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Left text block */
+.about-text {
+  background: linear-gradient(to right, rgba(20,20,20,0.9) 70%, rgba(20,20,20,0) 100%);
+  padding: 6rem 3rem;          /* more padding, moves text up */
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* text higher */
+}
+
+.about-text h2 {
+  font-size: 2.5rem;            /* bigger title */
+  margin-bottom: 1rem;
+}
+
+.about-text p {
+  font-size: 1.25rem;           /* bigger paragraph */
+  line-height: 1.7;
+}
+
+/* Right image block */
+.about-image {
+  background: url("/static/images/1817.jpg") center/cover no-repeat;
+  position: relative;
+}
+
+/* Black diagonal divider */
+.about::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 100%;
+  background: black;
+  clip-path: polygon(0 0, 20% 0, 0 100%, 0 100%); /* diagonal shape */
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+/* Responsive: stack on smaller screens */
+@media (max-width: 768px) {
+  .about {
+    grid-template-columns: 1fr;
+  }
+  .about-text {
+    background: rgba(20,20,20,0.9);
+    padding: 2rem;
+  }
+  .about-image {
+    min-height: 250px;
+  }
+  .about::after {
+    display: none;
+  }
+}
+
+.services {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 80vh;
+  width: 100%;
+  position: relative;
+}
+
+/* Text column */
+.services-text {
+  background: linear-gradient(to right, rgba(0,0,0,0.9) 70%, rgba(0,0,0,0) 100%);
+  padding: 5rem 3rem;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.services-text h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.services-text ul {
+  list-style: none;
+  padding: 0;
+  font-size: 1.25rem;
+  line-height: 1.8;
+}
+
+.services-text li {
+  margin-bottom: 0.75rem;
+}
+
+/* Image column */
+.services-image {
+  background: url("/static/images/_DSC6299.jpg") center/cover no-repeat; /* pick a good gym picture */
+  position: relative;
+}
+
+.services-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.4); /* fades into black */
+}
+
+/* Responsive stack */
+@media (max-width: 768px) {
+  .services {
+    grid-template-columns: 1fr;
+  }
+  .services-text {
+    background: rgba(0,0,0,0.9);
+    padding: 2rem;
+  }
+  .services-image {
+    min-height: 250px;
+  }
+}
+
+
+.how {
+  max-width: 900px;
+  margin: 4rem auto;
+  padding: 2rem;
+  background: rgba(20,20,20,0.8);
+  border-radius: 12px;
+  color: #eee;
+}
+
+.testimonials {
+  position: relative;
+  width: 100%;
+  margin: 0;                     /* remove auto-centering */
+  padding: 6rem 2rem;
+  text-align: center;
+  color: #fff;
+  background: url("/static/images/URM07738.jpg") center/cover no-repeat;
+}
+
+.testimonials h2 {
+  margin-bottom: 2rem;
+  font-size: 2.5rem;
+}
+
+/* iga blockquote eraldi kastina */
+.testimonials blockquote {
+  width: 90%;                   /* takes 90% of screen on small screens */
+  max-width: 700px;             /* never wider than 700px */
+  margin: 0 auto 2rem auto;
+  padding: 2rem;
+  background: rgba(20, 20, 20, 0.85);
+  border-radius: 12px;
+  font-size: 1.25rem;
+  line-height: 1.8;
+  font-style: italic;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.6);
+  text-align: left;
+}
+
+.testimonials blockquote span {
+  display: block;
+  margin-top: 1rem;
+  font-style: normal;
+  font-weight: bold;
+  color: #00aaff;
+  text-align: right;
+}
+
+/* mobiilis natuke kitsam */
+@media (max-width: 768px) {
+  .testimonials blockquote {
+    padding: 1.5rem;
+    font-size: 1.1rem;
+  }
+}
+
+
+
+.cta-contact {
+  width: 90%;                   /* takes 90% of screen on small screens */
+  max-width: 700px;             /* never wider than 700px */
+  margin: 4rem auto;
+  padding: 2rem;
+  background: #000;
+  border-radius: 12px;
+  color: #eee;
+}
+
+.services .service-cards {
+  display: grid;
+  gap: 1rem;
+}
+.services .card {
+  padding: 1rem;
+  border-radius: 8px;
+  background: rgba(40,40,40,0.9);
+}
+
+.footer {
+  padding: 2rem;
+  text-align: center;
+  background: #111;
+  color: #aaa;
+  font-size: 0.9rem;
+}
+.footer a { color: #00aaff; }

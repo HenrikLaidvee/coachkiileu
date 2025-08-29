@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block title %}Kontakt{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="/static/styles/contact.css">
+
+
+<div class="contact-container">
+  <video autoplay muted loop playsinline class="bg-video">
+    <source src="/static/videos/1000611382.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <div class="contact-box">
+    <h2>Kert Kiil YOOOOO</h2>
+    <h2>Anna teada kuis muneb HOLLA 🤙 PEACE ✌️😮‍💨</h2>
+    <form action="/Kontakt" method="post">
+      <label for="name">Sinu nimi:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">Sinu e-post:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="message">Sõnum:</label>
+      <textarea id="message" name="message" rows="5" required></textarea>
+
+      <button type="submit">Saada</button>
+    </form>
+  </div>
+</div>
+
+{% endblock %}
